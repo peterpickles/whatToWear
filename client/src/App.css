@@ -1,35 +1,46 @@
 /* BODY */
 .container {
   display: flex;
-  justify-content: center;
+  flex-direction: row;
 }
 
 /* SEARCH */
 .search-area {
   background-color: #eee;
-  width: 45%;
+  min-width: 55%;
   /* text-align: center; */
 }
 
 .box { 
   background-color: rgb(145, 228, 22);
   width: 90%;
+  margin: 10px;
 }
 
 .box__search {
-  
-  height: 30%;
+  height: 90px;
 }
 
-.box__search-content {
+.box--search {
+  height: 60px;
+  width: 80%;
+}
 
+.box--img__search {
+  height: 300px;
 }
 
 /* EXERCISE */
 .exercise-area {
   background-color: #aaa;
-  width: 55%;
+  min-width: 45%;
   /* text-align: center; */
+}
+
+.box__exercise {
+  display: flex;
+  flex-direction: row;
+  height: 200px
 }
 
 
@@ -65,11 +76,8 @@ nav a:hover {
   font-size: 10px;
 }
 
-.space {
-  margin: 15px 0;
-}
 
-
+/* BUTTONS */
 .btn-primary {
   color: #fff;
   background-color: #11f;
@@ -115,4 +123,10 @@ nav a:hover {
   color: white;
   border-radius: 2px;
   float: right;
+}
+
+@media (max-width: 900px) {
+  .container {
+    flex-direction: column;
+  }
 }
