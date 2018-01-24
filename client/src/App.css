@@ -1,4 +1,50 @@
-/* CUSTOM STYLES */
+/* BODY */
+.container {
+  display: flex;
+  flex-direction: row;
+}
+
+/* SEARCH */
+.search-area {
+  background-color: #eee;
+  min-width: 55%;
+  /* text-align: center; */
+}
+
+.box { 
+  background-color: rgb(145, 228, 22);
+  width: 90%;
+  margin: 10px;
+}
+
+.box__search {
+  height: 90px;
+}
+
+.box--search {
+  height: 60px;
+  width: 80%;
+}
+
+.box--img__search {
+  height: 300px;
+}
+
+/* EXERCISE */
+.exercise-area {
+  background-color: #aaa;
+  min-width: 45%;
+  /* text-align: center; */
+}
+
+.box__exercise {
+  display: flex;
+  flex-direction: row;
+  height: 200px
+}
+
+
+/* NAV */
 nav {
   width: 100%;
   background-color: #555;
@@ -16,6 +62,7 @@ nav a:hover {
   color: #7f4dd2;
 }
 
+/* FOOTER */
 .footer {
   background-color: #555;
   position: absolute;
@@ -29,10 +76,8 @@ nav a:hover {
   font-size: 10px;
 }
 
-.space {
-  margin: 15px 0;
-}
 
+/* BUTTONS */
 .btn-primary {
   color: #fff;
   background-color: #11f;
@@ -45,6 +90,7 @@ nav a:hover {
   background-color: #77f;
 }
 
+/* ALERTS */
 .error {
   background-color: pink;
   color: red;
@@ -79,32 +125,8 @@ nav a:hover {
   float: right;
 }
 
-/* DEFAULT STYLES FROM CREATE REACT APP MODULE */
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
-
-.App-title {
-  font-size: 1.5em;
-}
-
-.App-intro {
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+@media (max-width: 900px) {
+  .container {
+    flex-direction: column;
+  }
 }
