@@ -5,6 +5,7 @@ import axios from 'axios';
 import Flash from './layout/Flash.js';
 import Footer from './layout/Footer.js';
 import Home from './Home.js';
+import Search from "./Search.js";
 import Nav from './layout/Nav.js';
 import Login from './auth/Login.js';
 import Profile from './Profile.js';
@@ -86,6 +87,8 @@ class App extends Component {
                 () => (<Signup user={this.state.user} setFlash={this.setFlash} updateUser={this.updateUser} />)} />
               <Route path="/profile" component={
                 () => (<Profile user={this.state.user} setFlash={this.setFlash} />)} />
+               <Route path="/search" component={Search} />
+                             
             </div>
           </div>
         </Router>
