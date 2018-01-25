@@ -4,7 +4,7 @@ class SearchContent extends Component {
 	render(){
 		return(
 			<div className="box box__search-content">
-				<img className="box--img__search" src={this.props.foodImg} alt={this.props.name}/>
+				<img className="box--img__search" src={this.props.foodImg}/>
 				<div className="box--content__name">
 					<p>Name: </p>
 					<p>{this.props.name}</p>

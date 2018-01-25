@@ -22,8 +22,6 @@ Body{
 }
 
 .box__search-bar {
-  text-align: center;
-  padding-top: 25px;
   height: 90px;
   border-radius: 15px;
 }
