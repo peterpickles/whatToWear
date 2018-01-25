@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-
-
 import SearchBar from './SearchBar.js';
 import SearchContent from './SearchContent.js';
 import ExerciseContent from './ExerciseContent';
