@@ -18,8 +18,6 @@ const exMET3 = 5.8;
 const exImg3 = 'https://www.fillmurray.com/200/300';
 const pushup = require('./img/pushup.png');
 
-const pushup = require('./img/pushup.png')
-
 class Home extends Component {
   constructor(props){
     super(props);
