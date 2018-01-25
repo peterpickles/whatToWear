@@ -40,8 +40,20 @@ Body{
 }
 .box__search-content{
   text-align: center;
+  display: flex;
+  flex-direction: row;
 }
-p{
+
+.box--search-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.box--content__name, .box--content__calories {
+  margin: 10%;
+}
+
+p {
   font-size: 23px;
 }
 /* EXERCISE */
@@ -67,6 +79,12 @@ p{
   margin-left: 50px;
   font-size: 140%;
 }
+
+
+
+/* PRESEARCH */
+
+
 
 /* NAV */
 nav {
