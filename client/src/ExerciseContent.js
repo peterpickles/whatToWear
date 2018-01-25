@@ -1,14 +1,9 @@
 import React, { Component } from 'react';
 
 class ExerciseContent extends Component {
-	// constructor(props){
-	// 	super(props);
-
-	// }
-
-	// time = () => {
-	// 	return 2 * 4
-	// }
+	constructor(props){
+		super(props);
+	}
 
 	render(){
 		return (
