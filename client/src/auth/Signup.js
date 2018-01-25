@@ -44,27 +44,29 @@ class Signup extends Component {
     }
     else {
       form = (<form onSubmit={this.handleSubmit}>
+              <div className="login-form">
                 <div>
                   <input name="Name"
                        placeholder="What is your first name?"
                        value={this.state.name}
                        onChange={this.handleNameChange}
-                  />
+                       className="signup"/>
                 </div>
                 <div>
                   <input name="Email"
                        placeholder="What is your email?"
                        value={this.state.email}
-                       onChange={this.handleEmailChange} />
+                       onChange={this.handleEmailChange} className="signup"/>
                </div>
                <div>
                   <input name="Password"
                      placeholder="Choose a password"
                      type="password"
                      value={this.state.password}
-                     onChange={this.handlePasswordChange} />
+                     onChange={this.handlePasswordChange} className="signup"/>
                  </div>
                  <input type="submit" value="Sign up!" className="btn-primary" />
+               </div>
               </form>);
     }
     return (
