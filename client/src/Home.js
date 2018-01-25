@@ -24,25 +24,52 @@ class Home extends Component {
   constructor(props){
     super(props);
     this.state = {
-      name: 'Donut',
-      calories: '200',
-      foodImg: 'https://images-na.ssl-images-amazon.com/images/I/81DFDndTFOL._SL1500_.jpg'
+      name: '',
+      calories: '',
+      foodImg: ''
     }
   }
 
+  search = (e) => {
+    e.preventDefault();
+    this.setState({
+      name: 'Donut',
+      calories: '200',
+      foodImg: 'https://images-na.ssl-images-amazon.com/images/I/81DFDndTFOL._SL1500_.jpg'
+    });
+  }
+
   render(){
+    let exContent = <div />;
+    if(!this.state.name){
+      exContent = (
+        <div> 
+          <h1>Please eat, your grandmother is worried</h1>
+        </div>
+      );
+    } 
+    else {
+      exContent = (
+        <div>
+          <ExerciseContent exercise={exName1} met={exMET1} calories={this.state.calories} exerciseImg={exImg1} />
+          <ExerciseContent exercise={exName2} met={exMET2} calories={this.state.calories} exerciseImg={exImg2} />
+          <ExerciseContent exercise={exName3} met={exMET3} calories={this.state.calories} exerciseImg={exImg3} />  
+        </div>
+      );
+    }
     return (
 
       <div className="container">
-        <div className="search-area">
-          <SearchBar />
-          <SearchContent name={this.state.name} calories={this.state.calories} foodImg={this.state.foodImg} />
-        </div>
+         <div className="search-area">   
 
-        <div className="exercise-area">
-          <ExerciseContent exercise={exName1} met={exMET1} calories={this.state.calories} exerciseImg={exImg1} />
-          <ExerciseContent exercise={exName2} met={exMET2} calories={this.state.calories} exerciseImg={exImg2} />
-          <ExerciseContent exercise={exName3} met={exMET3} calories={this.state.calories} exerciseImg={exImg3} />
+          <SearchBar />
+          <button onClick={this.search}>Search</button>
+          <SearchContent name={this.state.name} calories={this.state.calories} foodImg={this.state.foodImg} />          
+        </div>
+        <div className="exercise-area"> 
+          {exContent}
+
+
         </div>
       </div>
     );
