@@ -40,8 +40,6 @@ Body{
 }
 .box__search-content{
   text-align: center;
-  display: flex;
-  flex-direction: row;
 }
 
 .box--search-text {
@@ -117,7 +115,7 @@ nav a:hover {
 
 .footer-text {
   color: #fff;
-  font-size: 15px;
+  font-size: 20px;
   padding-top: 20px;
 }
 
@@ -179,6 +177,12 @@ nav a:hover {
   text-align: center;
   background-color: white;
   width: 100%;
+  border: 3px solid black;
+
+}
+.signup{
+  min-width: 40%;
+  height: 40%;
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
