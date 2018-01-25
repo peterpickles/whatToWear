@@ -7,14 +7,14 @@ class Nav extends Component {
     let links = <span />;
     if(this.props.user){
       links = (
-        <span>
+        <span className="nav-link">
           <Link to="/profile">Profile</Link>
           <Logout updateUser={this.props.updateUser} />
         </span>);
     }
     else {
       links = (
-        <span>
+        <span className="nav-link">
           <Link to="/login">Login</Link>
           <Link to="/signup">Sign Up</Link>
         </span>);
@@ -22,11 +22,12 @@ class Nav extends Component {
 
     return(
         <div>
-          <nav className="nav">
-            <a href="/">Home</a>
-            {links}
-          </nav>
- 
+          <span className="nav-link">
+            <nav className="nav">
+              <a href="/">Home</a>
+              {links}
+            </nav>
+          </span>
         </div>
       );
   }
