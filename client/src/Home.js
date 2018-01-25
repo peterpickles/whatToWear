@@ -8,14 +8,13 @@ const exName1 = 'Pushups';
 const exMET1 = 8;
 const exImg1 = 'https://d30y9cdsu7xlg0.cloudfront.net/png/660576-200.png';
 // EXERCISE 2
-const exName2 = 'Squats';
-const exMET2 = 7.8;
-const exImg2 = 'https://www.fillmurray.com/200/300';
+const exName2 = 'Biking';
+const exMET2 = 4.0;
+const exImg2 = 'https://d30y9cdsu7xlg0.cloudfront.net/png/61698-200.png';
 // EXERCISE 3
-const exName3 = 'Sexy Time';
-const exMET3 = 5.8;
-const exImg3 = 'https://www.fillmurray.com/200/300';
-const pushup = require('./img/pushup.png');
+const exName3 = 'Watching Television';
+const exMET3 = 1.0;
+const exImg3 = 'https://image.flaticon.com/icons/svg/10/10866.svg';
 
 
 // GIPHY URL

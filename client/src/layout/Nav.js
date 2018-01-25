@@ -8,23 +8,25 @@ class Nav extends Component {
     if(this.props.user){
       links = (
         <span className="nav-link">
-          <Link to="/profile">Profile</Link>
+          <Link to="/profile"><i class="fa fa-user-o" aria-hidden="true"></i> Profile</Link>
           <Logout updateUser={this.props.updateUser} />
         </span>);
     }
     else {
       links = (
         <span className="nav-link">
-          <Link to="/login">Login</Link>
-          <Link to="/signup">Sign Up</Link>
+          <Link to="/login"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</Link>
+          <Link to="/signup"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Sign Up</Link>
         </span>);
     }
 
     return(
         <div>
-          <span className="nav-link">
+          <span id="nav-link">
             <nav className="nav">
-              <a href="/">Home</a>
+              <a href="/">
+              <img className="logo" herf='/' src ='https://www.equilibrium.design/wp-content/uploads/2016/07/equilibrium.png' alt="Logo"/>
+              </a>
               {links}
             </nav>
           </span>

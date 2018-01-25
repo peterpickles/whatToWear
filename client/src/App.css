@@ -1,6 +1,6 @@
 Body{
   font-family: 'Comfortaa', cursive;
-  background-color: grey;
+  background-color: #C0C0C0;
 }
 /* BODY */
 .container {
@@ -13,7 +13,12 @@ Body{
   min-width: 55%;
   /* text-align: center; */
 }
-
+.search-button{
+  min-width: 8%;
+  border-radius: 15px;
+  padding: 5px 5px;
+  margin: 8px 0;
+}
 .box {
   background-color: #02bd7c;
   width: 90%;
@@ -32,6 +37,7 @@ Body{
   height: 60px;
   width: 80%;
   border-radius: 15px;
+  font-size: 22px;
 }
 /*RESULTS*/
 .box--img__search {
@@ -40,18 +46,15 @@ Body{
 }
 .box__search-content{
   text-align: center;
+  display: flex;
+  flex-direction: row;
 }
 
 .box--search-text {
   display: flex;
   flex-direction: column;
 }
-
-.box--content__name, .box--content__calories {
-  margin: 10%;
-}
-
-p {
+p{
   font-size: 23px;
 }
 /* EXERCISE */
@@ -78,16 +81,10 @@ p {
   font-size: 140%;
 }
 
-
-
-/* PRESEARCH */
-
-
-
 /* NAV */
 nav {
   width: 100%;
-  background-color: #555;
+  background-color: rgba(85, 85, 85,.9);
   padding: 10px 0;
   display: inline-block;
   float: none;
@@ -99,14 +96,24 @@ nav a {
   font-size: 18px;
   color: #4ff;
 }
-
+.nav-link{
+  float: right;
+}
+#nav-link{
+  text-align: center;
+}
 nav a:hover {
   color: #7f4dd2;
 }
-
+.logo{
+  height: 60px;
+  width:  200px;
+  padding-left: 200px;
+  margin: auto;
+}
 /* FOOTER */
 .footer {
-  background-color: #555;
+  background-color: rgba(85, 85, 85,.9);
   position: fixed;
   bottom: 0;
   width: 100%;
@@ -185,18 +192,29 @@ nav a:hover {
   height: 40%;
   padding: 12px 20px;
   margin: 8px 0;
-  display: inline-block;
-  border: 1px solid white;
-  box-sizing: border-box;
-
+  border: none;
+  border-bottom: 2px solid black;
+  font-size: 14px;
 }
-input{
+
+input {
   min-width: 40%;
   height: 40%;
   border-radius: 15px;
 }
 .btn-primary{
   min-width: 20%;
-  height: 20%;
+  border-radius: 15px;
+  padding: 12px 20px;
+  margin: 8px 0;
+  background-color: #02bd7c;
+  font-size: 18px;
+}
+/*Profile*/
+.profile-info{
+  text-align: center;
+  background-color: white;
+  margin: auto;
+  width: 50%;
   border-radius: 15px;
 }
