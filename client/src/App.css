@@ -22,11 +22,6 @@ Body{
 }
 
 .box__search-bar {
-<<<<<<< HEAD
-=======
-  text-align: center;
-  padding-top: 25px;
->>>>>>> e551af25a919f9f3cedcdf16e1b11655d182e82d
   height: 90px;
   border-radius: 15px;
 }
