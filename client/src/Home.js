@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import SearchBar from './SearchBar.js';
 
 class Home extends Component {
   render(){
@@ -6,9 +7,7 @@ class Home extends Component {
         <div className="container">
           <div className="search-area">
             
-            <div className="box box__search">
-              <input className="box--search" type="text" placeholder="What do you need to undo?" />
-            </div>
+            <SearchBar />
             
             <div className="box box__search-content">
               <img className="box--img__search" src="https://images-na.ssl-images-amazon.com/images/I/81DFDndTFOL._SL1500_.jpg" alt="Donut"/>
