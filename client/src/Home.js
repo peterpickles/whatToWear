@@ -43,7 +43,7 @@ class Home extends Component {
     let exContent = <div />;
     if(!this.state.name){
       exContent = (
-        <div> 
+        <div className="exercise-area"> 
           <h1>Please eat, your grandmother is worried</h1>
         </div>
       );
@@ -51,9 +51,11 @@ class Home extends Component {
     else {
       exContent = (
         <div>
-          <ExerciseContent exercise={exName1} met={exMET1} calories={this.state.calories} exerciseImg={exImg1} />
-          <ExerciseContent exercise={exName2} met={exMET2} calories={this.state.calories} exerciseImg={exImg2} />
-          <ExerciseContent exercise={exName3} met={exMET3} calories={this.state.calories} exerciseImg={exImg3} />  
+          <div>
+            <ExerciseContent exercise={exName1} met={exMET1} calories={this.state.calories} exerciseImg={exImg1} />
+            <ExerciseContent exercise={exName2} met={exMET2} calories={this.state.calories} exerciseImg={exImg2} />
+            <ExerciseContent exercise={exName3} met={exMET3} calories={this.state.calories} exerciseImg={exImg3} />  
+          </div> 
         </div>
       );
     }
