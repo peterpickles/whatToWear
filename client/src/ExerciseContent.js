@@ -4,14 +4,11 @@ import React, { Component } from 'react';
 const weight = 68.0389
 
 class ExerciseContent extends Component {
-	constructor(props){
-		super(props);
-	}
 
 	test = () => {
 		let met = this.props.met;
 		let cal = this.props.calories;
-		let mins = Math.ceil(60 * (cal / (met * 68.0389)));
+		let mins = Math.ceil(60 * (cal / (met * weight)));
 		return mins;
 	}
 

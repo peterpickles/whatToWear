@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import SearchBar from './SearchBar.js';
 import SearchContent from './SearchContent.js';
 import ExerciseContent from './ExerciseContent';
 
@@ -16,8 +15,11 @@ const exImg2 = 'https://www.fillmurray.com/200/300';
 const exName3 = 'Sexy Time';
 const exMET3 = 5.8;
 const exImg3 = 'https://www.fillmurray.com/200/300';
-const pushup = require('./img/pushup.png');
 
+
+// GIPHY URL
+const giphyAPI_URL = "http://api.giphy.com/v1/gifs/search";
+const foodAPI_URL = "https://api.edamam.com/api/nutrition-data?app_id=242d9612&app_key=8ff67568033c789ed1010151ade5fc7e&ingr=1%20";
 
 class Home extends Component {
   constructor(props){
@@ -41,40 +43,72 @@ class Home extends Component {
   handleSubmit(e) {
     e.preventDefault();
     var base = this
-    let foodAPI = "https://api.edamam.com/api/nutrition-data?app_id=242d9612&app_key=8ff67568033c789ed1010151ade5fc7e&ingr=1%20"+this.state.name;
+    let giphyURL = `${giphyAPI_URL}?q=${this.state.name}&api_key=0Efg5mlFqEAm66u34MZpWipb4gfAsT6A&limit=25`
+    let foodURL = foodAPI_URL + this.state.name;
 
-    fetch(foodAPI)
-      .then((response) => {
-        return response.json()
-      }).then((json) => {
-        base.setState({
-          foodObj: json,
-          calories: json.calories
-        });
-        console.log(this.state.foodObj.calories);
-      }).catch((ex) => {
-        console.log('error when parsing');
+
+    //GIPHY API PULL
+    fetch(giphyURL)
+    .then((res) => {
+      return res.json()
+    }).then((json) => {
+      base.setState({
+        foodImg: json.data[0].images.fixed_width_downsampled.url
       });
+      console.log("food img is", this.state.foodImg);
+    }).catch((ex) => {
+      console.log('giphy phetch error');
+    })
 
-    // this.setState({
-    //   name: 'Donut',
-    //   calories: '200',
-    //   foodImg: 'https://images-na.ssl-images-amazon.com/images/I/81DFDndTFOL._SL1500_.jpg',
+    // {item.images.fixed_width_downsampled.url}
 
-    // });
+    //CALORIE API PULL
+    fetch(foodURL)
+    .then((res) => {
+      return res.json()
+    }).then((json) => {
+      base.setState({
+        foodObj: json,
+        calories: json.calories
+      });
+      console.log(this.state.foodObj.calories);
+    }).catch((ex) => {
+      console.log('food fetch error');
+    });
   }
 
+
   render(){
-    let exContent = <div />;
-    if(!this.state.name){
-      exContent = (
+    let exerciseContent = <div />;
+    let searchContent = <div />;
+    if(!this.state.name){      
+      searchContent = (
+        <div className="box box__search-bar">
+          <form onSubmit={this.handleSubmit}>
+            <input className="box--search-bar" type="text" placeholder="What do you need to undo?" onChange={this.handleChange} />
+            <input type="submit" value="Submit"/>
+          </form>
+        </div>
+      );
+      exerciseContent = (
         <div> 
-          <h1>Please eat, your grandmother is worried</h1>
+          <h1>Please eat, your grandmother worries about you.</h1>
         </div>
       );
     } 
     else {
-      exContent = (
+      searchContent = (
+        <div>
+          <div className="box box__search-bar">
+            <form onSubmit={this.handleSubmit}>
+              <input className="box--search-bar" type="text" placeholder="What do you need to undo?" onChange={this.handleChange} />
+              <input type="submit" value="Submit"/>
+            </form>
+          </div>
+          <SearchContent name={this.state.name} calories={this.state.calories} foodImg={this.state.foodImg} />          
+        </div>
+      );
+      exerciseContent = (
         <div>
           <ExerciseContent exercise={exName1} met={exMET1} calories={this.state.calories} exerciseImg={exImg1} />
           <ExerciseContent exercise={exName2} met={exMET2} calories={this.state.calories} exerciseImg={exImg2} />
@@ -86,19 +120,10 @@ class Home extends Component {
 
       <div className="container">
          <div className="search-area">   
-
-          <div className="box box__search-bar">
-            <form onSubmit={this.handleSubmit}>
-              <input className="box--search-bar" type="text" placeholder="What do you need to undo?" onChange={this.handleChange} />
-              <input type="submit" value="Submit"/>
-            </form>
-          </div>
-          <SearchContent name={this.state.name} calories={this.state.calories} foodImg={this.state.foodImg} />          
+          {searchContent}
         </div>
         <div className="exercise-area"> 
-          {exContent}
-
-
+          {exerciseContent}
         </div>
       </div>
     );
