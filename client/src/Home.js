@@ -27,7 +27,7 @@ class Home extends Component {
       foodImg: ''
     }
   }
-
+  
   search = (e) => {
     e.preventDefault();
     this.setState({
