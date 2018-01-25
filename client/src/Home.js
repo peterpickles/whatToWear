@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+
+
 import SearchBar from './SearchBar.js';
 import SearchContent from './SearchContent.js';
 import ExerciseContent from './ExerciseContent';
@@ -16,8 +18,7 @@ const exImg2 = 'https://www.fillmurray.com/200/300';
 const exName3 = 'Sexy Time';
 const exMET3 = 5.8;
 const exImg3 = 'https://www.fillmurray.com/200/300';
-
-
+const pushup = require('./img/pushup.png');
 
 
 class Home extends Component {
@@ -32,6 +33,7 @@ class Home extends Component {
 
   render(){
     return (
+
       <div className="container">
         <div className="search-area">            
           <SearchBar />
