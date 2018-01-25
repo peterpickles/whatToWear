@@ -1,12 +1,12 @@
 Body{
   font-family: 'Comfortaa', cursive;
+  background-color: grey;
 }
 /* BODY */
 .container {
   display: flex;
   flex-direction: row;
 }
-
 /* SEARCH */
 .search-area {
   background-color: #eee;
@@ -22,6 +22,8 @@ Body{
 }
 
 .box__search-bar {
+  text-align: center;
+  padding-top: 25px;
   height: 90px;
   border-radius: 15px;
 }
@@ -39,13 +41,21 @@ Body{
 .box__search-content{
   text-align: center;
 }
+p{
+  font-size: 23px;
+}
 /* EXERCISE */
 .exercise-area {
   background-color: #eee;
   min-width: 45%;
   /*text-align: center; */
 }
+.box--img__exercise{
+  height: 200px;
+  width: 200px;
+  border-radius: 15px;
 
+}
 .box__exercise {
   display: flex;
   flex-direction: row;
@@ -53,18 +63,21 @@ Body{
   margin-left: 35px;
   border-radius: 15px;
 }
-
+.box--content__exercise-wrapper{
+  margin-left: 50px;
+  font-size: 140%;
+}
 
 /* NAV */
 nav {
-  display: block;
   width: 100%;
   background-color: #555;
   padding: 10px 0;
+  display: inline-block;
+  float: none;
 }
 
 nav a {
-  text-align: right;
   margin: 10px;
   text-decoration: none;
   font-size: 18px;
@@ -78,15 +91,16 @@ nav a:hover {
 /* FOOTER */
 .footer {
   background-color: #555;
-  position: absolute;
+  position: fixed;
   bottom: 0;
   width: 100%;
-  height: 20px;
+  height: 30px;
 }
 
 .footer-text {
   color: #fff;
   font-size: 15px;
+  padding-top: 20px;
 }
 
 
@@ -141,4 +155,26 @@ nav a:hover {
   .container {
     flex-direction: column;
   }
+}
+/*login*/
+.login-form{
+  text-align: center;
+  background-color: white;
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid white;
+  box-sizing: border-box;
+
+}
+input{
+  min-width: 40%;
+  height: 40%;
+  border-radius: 15px;
+}
+.btn-primary{
+  min-width: 20%;
+  height: 20%;
+  border-radius: 15px;
 }
