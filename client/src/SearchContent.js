@@ -22,13 +22,15 @@ class SearchContent extends Component {
 				{/* <SearchIMG results={this.state.results} /> */}
 				{/* <Suggestions /> */}
 				<img className="box--img__search" src={this.props.foodImg} alt={this.props.name + " image"} />
-				<div className="box--content__name">
-					<p>Name: </p>
-					<p>{this.props.name}</p>
-				</div>
-				<div className="box--content__calories">
-					<p>Calories: </p>
-					<p>{this.props.calories}</p>
+				<div className="box--search-text">
+					<div className="box--content__name">
+						<p>Name: </p>
+						<h1>{this.props.name}</h1>
+					</div>
+					<div className="box--content__calories">
+						<p>Calories: </p>
+						<h1>{this.props.calories}</h1>
+					</div>
 				</div>
 			</div>
 		);

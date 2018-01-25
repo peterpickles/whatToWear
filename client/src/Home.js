@@ -107,7 +107,7 @@ class Home extends Component {
               <input type="submit" value="Submit"/>
             </form>
           </div>
-          <SearchContent name={this.state.name} calories={this.state.calories} foodImg={this.state.foodImg} />     
+          <SearchContent name={this.state.name} calories={this.state.calories} foodImg="https://d30y9cdsu7xlg0.cloudfront.net/png/830214-200.png" />     
         </div>
       );
       exerciseContent = (
