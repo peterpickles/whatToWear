@@ -16,9 +16,9 @@ const exImg2 = 'https://www.fillmurray.com/200/300';
 const exName3 = 'Sexy Time';
 const exMET3 = 5.8;
 const exImg3 = 'https://www.fillmurray.com/200/300';
+const pushup = require('./img/pushup.png');
 
-
-
+const pushup = require('./img/pushup.png')
 
 class Home extends Component {
   constructor(props){
@@ -60,13 +60,16 @@ class Home extends Component {
     return (
 
       <div className="container">
-        <div className="search-area">   
+         <div className="search-area">   
+
           <SearchBar />
           <button onClick={this.search}>Search</button>
           <SearchContent name={this.state.name} calories={this.state.calories} foodImg={this.state.foodImg} />          
         </div>
         <div className="exercise-area"> 
           {exContent}
+
+
         </div>
       </div>
     );
