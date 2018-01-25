@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 //150 LBS DEFAULT
-const weight = 68.0389
+const weight = 68.0389;
 
 class ExerciseContent extends Component {
 
@@ -18,7 +18,7 @@ class ExerciseContent extends Component {
 				<img className="box--img__exercise" src={this.props.exerciseImg} alt="Pushups"/>
 				<div className="box--content__exercise-wrapper">
 					<h4 className="box--content__exercise">{this.props.exercise}</h4>
-					<h2 className="box--content__time">{this.test()}mins</h2>
+					<h1 className="box--content__time">{this.test()}<small>mins</small></h1>
 				</div>
 			</div>
 		)

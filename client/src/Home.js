@@ -6,15 +6,15 @@ import ExerciseContent from './ExerciseContent';
 // EXERCISE 1
 const exName1 = 'Pushups';
 const exMET1 = 8;
-const exImg1 = 'https://www.fillmurray.com/200/300';
+const exImg1 = 'https://d30y9cdsu7xlg0.cloudfront.net/png/660576-200.png';
 // EXERCISE 2
-const exName2 = 'Squats';
-const exMET2 = 7.8;
-const exImg2 = 'https://www.fillmurray.com/200/300';
+const exName2 = 'Biking';
+const exMET2 = 4.0;
+const exImg2 = 'https://d30y9cdsu7xlg0.cloudfront.net/png/61698-200.png';
 // EXERCISE 3
-const exName3 = 'Sexy Time';
-const exMET3 = 5.8;
-const exImg3 = 'https://www.fillmurray.com/200/300';
+const exName3 = 'Watching Television';
+const exMET3 = 1.0;
+const exImg3 = 'https://image.flaticon.com/icons/svg/10/10866.svg';
 
 
 // GIPHY URL
@@ -25,6 +25,7 @@ class Home extends Component {
   constructor(props){
     super(props);
     this.state = {
+      value: '',
       name: '',
       calories: '',
       foodImg: ''
@@ -36,16 +37,19 @@ class Home extends Component {
 
   handleChange(event) {
     this.setState({
-			name: event.target.value
+			value: event.target.value
 		});
   }
 
   handleSubmit(e) {
     e.preventDefault();
-    var base = this
+    let base = this
     let giphyURL = `${giphyAPI_URL}?q=${this.state.name}&api_key=0Efg5mlFqEAm66u34MZpWipb4gfAsT6A&limit=25`
     let foodURL = foodAPI_URL + this.state.name;
 
+    this.setState({
+			name: this.state.value
+		});
 
     //GIPHY API PULL
     fetch(giphyURL)
@@ -53,14 +57,12 @@ class Home extends Component {
       return res.json()
     }).then((json) => {
       base.setState({
-        foodImg: json.data[0].images.fixed_width_downsampled.url
+        foodImg: json.data
       });
       console.log("food img is", this.state.foodImg);
     }).catch((ex) => {
       console.log('giphy phetch error');
     })
-
-    // {item.images.fixed_width_downsampled.url}
 
     //CALORIE API PULL
     fetch(foodURL)
@@ -83,7 +85,7 @@ class Home extends Component {
     let searchContent = <div />;
     if(!this.state.name){      
       searchContent = (
-        <div className="box box__search-bar">
+        <div className="box box__search-bar pre-search">
           <form onSubmit={this.handleSubmit}>
             <input className="box--search-bar" type="text" placeholder="What do you need to undo?" onChange={this.handleChange} />
             <input type="submit" value="Submit"/>
@@ -91,8 +93,8 @@ class Home extends Component {
         </div>
       );
       exerciseContent = (
-        <div> 
-          <h1>Please eat, your grandmother worries about you.</h1>
+        <div className="pre-search"> 
+          <h1>Please eat something, your grandmother worries about you.</h1>
         </div>
       );
     } 
@@ -105,7 +107,7 @@ class Home extends Component {
               <input type="submit" value="Submit"/>
             </form>
           </div>
-          <SearchContent name={this.state.name} calories={this.state.calories} foodImg={this.state.foodImg} />          
+          <SearchContent name={this.state.name} calories={this.state.calories} foodImg={this.state.foodImg} />     
         </div>
       );
       exerciseContent = (
@@ -120,10 +122,14 @@ class Home extends Component {
 
       <div className="container">
          <div className="search-area">   
+
           {searchContent}
+        
         </div>
         <div className="exercise-area"> 
+        
           {exerciseContent}
+        
         </div>
       </div>
     );
